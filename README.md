@@ -21,7 +21,7 @@ On the other hand, when clock is moved 1-hour ahead, there happens no data accur
 timestamp values during this period, which might be a bit confusing if you examine the data with the daylight saving timezone, 
 instead of GMT/UTC.
 
-<img src="https://github.com/ksevindik/mysql-timezone-examples/blob/master/images/pdt_timezone_one_hour_ahead.png" width="250" height="150" alt="""/>
+<img src="https://github.com/ksevindik/mysql-timezone-examples/blob/master/images/pdt_timezone_one_hour_ahead.png" width="250" height="150" alt=""/>
 
 ### Why do we get errors like "Data truncation: Incorrect datetime value: '2022-03-13 02:01:00' for column 'ts_value' at row 1" ?
 If the MySQL server operates with a daylight saving timezone like America/Los_Angeles, and the application which sends 
