@@ -13,6 +13,8 @@ timestamp values will get affected at those times. Loss of value accuracy occurs
 and clients which are working with a non-daylight saving timezone such as GMT/UTC, sending timestamp values during that 
 1-hour period.
 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
 <img src="https://github.com/ksevindik/mysql-timezone-examples/blob/master/images/pdt_timezone_data_accuracy_issue.png" width="250" height="150" alt="""/>
 
 On the other hand, when clock is moved 1-hour ahead, there happens no data accuracy loss, there will exist on data having
