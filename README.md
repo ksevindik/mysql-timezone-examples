@@ -35,5 +35,5 @@ In order to avoid "Data truncation: Incorrect datetime value" errors, your appli
 timezone corresponding to the MySQL server's timezone during this serialization process, in fact setting `connectionTimezone` or
 `serverTimezone`JDBC url parameters with the MySQL server's timezone value will do this.
 
-[pdt_timezone_one_hour_ahead]: (https://github.com/ksevindik/mysql-timezone-examples/images/pdt_timezone_one_hour_ahead.png "")
-[pdt_timezone_data_accuracy_issue]: (https://github.com/ksevindik/mysql-timezone-examples/images/pdt_timezone_data_accuracy_issue.png "")
+[pdt_timezone_one_hour_ahead]: (https://github.com/ksevindik/mysql-timezone-examples/blob/master/images/pdt_timezone_one_hour_ahead.png "")
+[pdt_timezone_data_accuracy_issue]: (https://github.com/ksevindik/mysql-timezone-examples/blob/master/images/pdt_timezone_data_accuracy_issue.png "")
