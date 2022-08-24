@@ -13,13 +13,13 @@ timestamp values will get affected at those times. Loss of value accuracy occurs
 and clients which are working with a non-daylight saving timezone such as GMT/UTC, sending timestamp values during that 
 1-hour period.
 
-![alt text][pdt_timezone_data_accuracy_issue]
+![](https://github.com/ksevindik/mysql-timezone-examples/blob/master/images/pdt_timezone_data_accuracy_issue.png =150x250)
 
 On the other hand, when clock is moved 1-hour ahead, there happens no data accuracy loss, there will exist on data having
 timestamp values during this period, which might be a bit confusing if you examine the data with the daylight saving timezone, 
 instead of GMT/UTC.
 
-![alt text][pdt_timezone_one_hour_ahead]
+![](https://github.com/ksevindik/mysql-timezone-examples/blob/master/images/pdt_timezone_one_hour_ahead.png =150x250)
 
 ### Why do we get errors like "Data truncation: Incorrect datetime value: '2022-03-13 02:01:00' for column 'ts_value' at row 1" ?
 If the MySQL server operates with a daylight saving timezone like America/Los_Angeles, and the application which sends 
@@ -34,6 +34,3 @@ its message "Data truncation: Incorrect datetime value".
 In order to avoid "Data truncation: Incorrect datetime value" errors, your application should employ the exact
 timezone corresponding to the MySQL server's timezone during this serialization process, in fact setting `connectionTimezone` or
 `serverTimezone`JDBC url parameters with the MySQL server's timezone value will do this.
-
-[pdt_timezone_one_hour_ahead]: https://github.com/ksevindik/mysql-timezone-examples/blob/master/images/pdt_timezone_one_hour_ahead.png ""
-[pdt_timezone_data_accuracy_issue]: https://github.com/ksevindik/mysql-timezone-examples/blob/master/images/pdt_timezone_data_accuracy_issue.png ""
