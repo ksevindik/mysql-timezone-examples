@@ -19,7 +19,7 @@ class JacksonObjectMapperIntegrationTests2 {
     private lateinit var objectMapper: ObjectMapper
 
     @Test
-    fun `objectMapper should convert using its own date format without a timezone set using UTC as default one independent of JVM default timezone`() {
+    fun `objectMapper should convert using its own date format using timezone given as property`() {
         val date = Date(1661238000000) //2022-08-23T07:00:00.000 in UTC
         val testEntity = TestEntity()
         testEntity.tsValue = date
