@@ -15,8 +15,6 @@ and clients which are working with a non-daylight saving timezone such as GMT/UT
 
 <img src="https://github.com/ksevindik/mysql-timezone-examples/blob/master/images/pdt_timezone_data_accuracy_issue.png" width="400" height="600" alt=""/>
 
-<img src="" width="250" height="150" alt="""/>
-
 On the other hand, when clock is moved 1-hour ahead, there happens no data accuracy loss, there will exist on data having
 timestamp values during this period, which might be a bit confusing if you examine the data with the daylight saving timezone, 
 instead of GMT/UTC.
