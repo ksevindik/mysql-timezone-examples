@@ -65,7 +65,8 @@ select * from test_entity;
          */
         Arrays.asList(
             "2022-03-13T09:59:00.000",
-            "2022-03-13T10:01:00.000").forEach {
+            "2022-03-13T10:01:00.000",
+            "2022-03-13T11:01:00.000").forEach {
             val date = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss").parse(it)
             val testEntity = TestEntity()
             testEntity.tsValue = date
@@ -92,7 +93,6 @@ select * from test_entity;
             testEntityRepository.save(testEntity)
         }
         ex.printStackTrace()
-        flushAndClear()
         //openDBConsole()
     }
 
