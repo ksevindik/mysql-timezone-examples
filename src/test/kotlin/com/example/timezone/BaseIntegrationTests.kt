@@ -31,7 +31,7 @@ abstract class BaseIntegrationTests {
             .withReuse(true)
             .withEnv("TZ", mysqlServerTimezone)
             .withUrlParam("serverTimezone", mysqlConnectionTimezone) //connectionTimezone
-            .withUrlParam("forceConnectionTimeZoneToSession", forceConnectionTimeZoneToSession)
+            .withUrlParam("`forceConnectionTimeZoneToSession`", forceConnectionTimeZoneToSession)
 
         @DynamicPropertySource
         @JvmStatic

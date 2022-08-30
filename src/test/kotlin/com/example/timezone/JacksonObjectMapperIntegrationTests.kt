@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
+import java.text.SimpleDateFormat
 import java.time.ZoneId
 import java.util.Date
 import java.util.TimeZone
@@ -16,8 +17,8 @@ class JacksonObjectMapperIntegrationTests {
     private lateinit var objectMapper: ObjectMapper
 
     @Test
-    fun `objectMapper should convert using its own date format without a timezone set using UTC as default one independent of JVM default timezone`() {
-        val date = Date(1661238000000) //2022-08-23T07:00:00.000
+    fun `objectMapper should convert using its own date format independent of JVM's default timezone`() {
+        val date = Date(1661238000000) //2022-08-23T07:00:00.000 in UTC
         val testEntity = TestEntity()
         testEntity.tsValue = date
 
@@ -31,7 +32,6 @@ class JacksonObjectMapperIntegrationTests {
         TimeZone.setDefault(TimeZone.getTimeZone("America/Los_Angeles"))
 
         val actualJson2 = objectMapper.writeValueAsString(testEntity)
-        val dateFormat = objectMapper.dateFormat
 
         val expectedJson2 = """{"id":null,"tsValue":"2022-08-23T07:00:00.000+00:00","dtValue":null}""".trimIndent()
 

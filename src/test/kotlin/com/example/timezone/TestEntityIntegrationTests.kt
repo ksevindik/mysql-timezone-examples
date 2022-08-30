@@ -98,13 +98,12 @@ select * from test_entity;
 
     @Test
     fun `ts and dt values should be same as the values fetched from DB`() {
-        val date = Date(1661238000000) //2022-08-23T07:00:00.000
+        val date = Date(1661238000000) //2022-08-23T07:00:00.000 in UTC
         val testEntity = TestEntity()
         testEntity.tsValue = date
         testEntity.dtValue = date
         testEntityRepository.save(testEntity)
-        flushAndClear()
-        //openDBConsole()
+        openDBConsole()
         Assertions.assertEquals("UTC",TimeZone.getDefault().id)
         val testEntityFetchedFromDB = testEntityRepository.findById(testEntity.id!!).orElse(null)
         Assertions.assertEquals(testEntity.tsValue?.time,testEntityFetchedFromDB?.tsValue?.time)

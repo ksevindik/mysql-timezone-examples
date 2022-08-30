@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import java.util.Date
 
-class TimestampConversionUnitTests : BaseUnitTests() {
+class ProtobufTimestampConversionUnitTests : BaseUnitTests() {
     @Test
     fun `it should obtain protobuf timestamp from java date object and vice versa`() {
         val now = Date()

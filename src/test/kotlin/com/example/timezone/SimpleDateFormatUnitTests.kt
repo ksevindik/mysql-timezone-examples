@@ -59,7 +59,7 @@ class SimpleDateFormatUnitTests : BaseUnitTests() {
     }
 
     @Test
-    fun `simple date format timezone property should be used during formatting IF offset is given`() {
+    fun `simple date format timezone property should NOT be used during formatting IF offset is given`() {
         val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sssZ")
         val date1 = Date(1661238000000)
         val date2 = Date(1661263200000)
